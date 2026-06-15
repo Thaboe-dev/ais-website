@@ -2,7 +2,7 @@
  * AIS Site Configuration
  * ----------------------
  * Edit this file to update mission, vision, contact, social, stats, and form URLs.
- * Anything wrapped in {TODO ...} should be replaced with real content before launch.
+ * Mission, vision, and values match the official AIS reports.
  */
 
 export const siteConfig = {
@@ -13,45 +13,47 @@ export const siteConfig = {
   // other than the eventual production domain.
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://africainnovators.cmu.edu",
   description:
-    "The Africa Innovators Society (AIS) at CMU-Africa is the campus entrepreneurship club dedicated to unleashing the innovative potential of Africa's future leaders. Through hands-on programs, workshops, competitions, and networking events, AIS provides a supportive community where members gain the skills, experiences, and connections to turn their entrepreneurial passions into real-world impact.",
+    "The Africa Innovators Society (AIS) is the official entrepreneurship club of Carnegie Mellon University Africa. We connect CMU-Africa students with Africa's innovation ecosystem through fireside chats, hackathons, summits, and ventures that turn bold ideas into real impact.",
   affiliation: "Carnegie Mellon University Africa",
   patron: "Prof. Jesse Thornburg",
 
+  // Mission — official version (AIS 2024-25 Annual Report).
   mission:
-    "To cultivate Africa's next generation of entrepreneurs by equipping CMU-Africa students with the skills, networks, and opportunities to launch ventures that transform the continent.",
+    "To cultivate an entrepreneurial spirit within CMU-Africa by empowering students through skills workshops, networking events, pitch competitions, and mentorship programs that support the development of sustainable ventures and impactful solutions to African challenges.",
 
+  // Vision — official version (AIS 2024-25 Annual Report).
   vision:
-    "An Africa where every CMU-Africa student has the confidence, capability, and community to turn bold ideas into thriving ventures.",
+    "AIS envisions an Africa where CMU-Africa graduates lead as innovative entrepreneurs transforming communities through ethical entrepreneurship and technology-driven solutions.",
 
+  // Three core values — Integrity, Innovation, Growth (per AIS reports).
   values: [
     {
       title: "Integrity",
-      description: "We do what we say, build what we ship, and tell the truth — to our members, our partners, and ourselves.",
+      description:
+        "We make ethical personal, professional, and business decisions that uphold our standards and act in good faith to build trust.",
     },
     {
       title: "Innovation",
-      description: "We celebrate the bold, the experimental, and the homegrown — solutions built by Africans, for Africa, for the world.",
+      description:
+        "We foster an environment where creative thinking and inspired ideas are welcomed — innovation is the heart of successful entrepreneurship.",
     },
     {
       title: "Growth",
-      description: "We measure ourselves by how much our members grow — as builders, leaders, and human beings.",
-    },
-    {
-      title: "Grit and Drive",
-      description: "We back the ambitious ideas others overlook and stay in the room when the work gets hard.",
+      description:
+        "Through continuous learning and skills development, we empower our members to expand their capabilities and grow as entrepreneurs.",
     },
   ],
 
   originStory: [
-    "The Africa Innovators Society was founded at Carnegie Mellon University Africa to unleash the innovative potential of the continent's future leaders. Born out of a belief that Africa's true story must be written by its own people, AIS exists to make sure no great African idea dies in a notebook.",
-    "What began as informal pitch nights and weekend hackathons has grown into a thriving community of builders, mentors, and alumni across fintech, climate, health, agritech, and AI. From the Harvard T.H. Chan HSIL Hackathon to the CMU-Africa Innovation Hub incubator, AIS members are showing up — and winning — on stages across the continent and beyond.",
+    "The Africa Innovators Society was officially launched at Carnegie Mellon University Africa on November 7, 2023 as the Student Entrepreneurship Club. The launch event drew 80 students from CMU-Africa, the African Leadership University, Davis College, and the University of Rwanda — featuring industry leaders from Jasiri, 250 Startups, and CHARIS UAS.",
+    "The founding team — led by Muhammad Aliyu — built the early flagship programs: the AI Revolution Bootcamp with Prof. João Barros, the first FlutterFlow rapid prototyping bootcamp, and the Tartans Innovate and Jenga hackathons. Successive executive teams have since deepened AIS's role as a practical bridge between CMU-Africa and Africa's startup ecosystem — coordinating delegations to Africa's Business Heroes, supporting wins at FemSTEM Africa, and convening 100+ leaders at the AIS Leadership Summit.",
   ],
 
   stats: [
-    { label: "LinkedIn community", value: "990+" },
-    { label: "Events per year", value: "25+" },
-    { label: "Ventures launched", value: "12" },
-    { label: "Mentor network", value: "40+" },
+    { label: "Active members", value: "100+" },
+    { label: "Events delivered", value: "30+" },
+    { label: "Ventures supported", value: "10+" },
+    { label: "Value to students", value: "$30K+" },
   ],
 
   contact: {
@@ -78,9 +80,9 @@ export const siteConfig = {
 
   testimonial: {
     quote:
-      "AIS gave me more than a network — it gave me the courage to ship. The pitch nights, the mentors, the late-night feedback sessions — they're the reason my startup exists today.",
-    name: "{TODO Member Name}",
-    role: "{TODO Cohort / Venture}",
+      "AIS at CMU-Africa has been a game-changer. It's where tech skills meet entrepreneurship — and where ideas turn into real solutions. We're not just students here; we're the future tech leaders of Africa.",
+    name: "Sheila Wafula",
+    role: "MS IT '26 · AIS Member",
     photo: "",
   },
 } as const;

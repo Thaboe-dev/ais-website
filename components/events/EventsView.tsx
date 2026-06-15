@@ -15,7 +15,9 @@ export function EventsView({
   upcoming: ContentEntry<EventFrontmatter>[];
   past: ContentEntry<EventFrontmatter>[];
 }) {
-  const [tab, setTab] = useState<Tab>(upcoming.length ? "upcoming" : "past");
+  // Default tab is always "upcoming" — when none are scheduled the empty
+  // state invites visitors to switch to the Past archive.
+  const [tab, setTab] = useState<Tab>("upcoming");
 
   const allTags = useMemo(() => {
     const set = new Set<string>();
@@ -104,8 +106,18 @@ export function EventsView({
         <div className="text-center py-20 rounded-2xl border border-dashed border-charcoal-200">
           <CalendarOff className="h-10 w-10 mx-auto text-charcoal-300" />
           <p className="mt-4 text-charcoal-500">
-            {tab === "upcoming" ? "No upcoming events scheduled yet — check back soon." : "No past events match this filter."}
+            {tab === "upcoming"
+              ? "No upcoming events scheduled yet — check back soon."
+              : "No past events match this filter."}
           </p>
+          {tab === "upcoming" && past.length > 0 && (
+            <button
+              onClick={() => setTab("past")}
+              className="mt-4 text-sm font-semibold text-crimson-700 hover:text-crimson-800"
+            >
+              Browse the past events archive →
+            </button>
+          )}
         </div>
       ) : (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
