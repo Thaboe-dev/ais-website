@@ -9,6 +9,7 @@ export type EventFrontmatter = {
   location: string;
   description: string;
   cover?: string;
+  gallery?: string[];
   registrationUrl?: string;
   speaker?: string;
   tags?: string[];

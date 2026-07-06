@@ -6,6 +6,7 @@ import { CalendarDays, MapPin, ArrowUpRight } from "lucide-react";
 import { Card, CardBody } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { formatEventDate, formatEventTime } from "@/lib/format";
+import { asset } from "@/lib/asset";
 import type { EventFrontmatter } from "@/lib/content";
 
 export function EventCard({
@@ -17,6 +18,7 @@ export function EventCard({
   frontmatter: EventFrontmatter;
   variant?: "default" | "past";
 }) {
+  const hasCover = !!frontmatter.cover;
   return (
     <motion.div
       initial={{ opacity: 0, y: 18 }}
@@ -28,19 +30,39 @@ export function EventCard({
     >
       <Link href={`/events/${slug}`} className="group block h-full">
         <Card className="overflow-hidden h-full hover:border-crimson-200 hover:shadow-[var(--shadow-strong)] transition-shadow">
-          <div className="relative h-44 gradient-brand overflow-hidden">
-            <motion.div
-              aria-hidden
-              className="absolute inset-0 opacity-30"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle at 30% 20%, rgba(255,255,255,0.6) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(255,255,255,0.3) 0%, transparent 50%)",
-              }}
-              animate={{ scale: [1, 1.06, 1] }}
-              transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <div className="absolute inset-0 flex items-center justify-center p-6">
-              <p className="text-white text-2xl font-bold text-center leading-tight font-[var(--font-display)] line-clamp-3 group-hover:scale-[1.03] transition-transform duration-500">
+          <div className="relative h-44 overflow-hidden">
+            {hasCover ? (
+              <>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={asset(frontmatter.cover)}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.07]"
+                  loading="lazy"
+                  draggable={false}
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-t from-charcoal-950/85 via-charcoal-950/25 to-transparent"
+                />
+              </>
+            ) : (
+              <>
+                <div aria-hidden className="absolute inset-0 gradient-brand" />
+                <motion.div
+                  aria-hidden
+                  className="absolute inset-0 opacity-30"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(circle at 30% 20%, rgba(255,255,255,0.6) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(255,255,255,0.3) 0%, transparent 50%)",
+                  }}
+                  animate={{ scale: [1, 1.06, 1] }}
+                  transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+                />
+              </>
+            )}
+            <div className="absolute inset-0 flex items-end justify-start p-5">
+              <p className="text-white text-xl font-bold leading-tight font-[var(--font-display)] line-clamp-3 drop-shadow-md group-hover:translate-y-[-2px] transition-transform duration-500">
                 {frontmatter.title}
               </p>
             </div>
