@@ -49,21 +49,20 @@ export function Header() {
       <div className="container-page flex items-center justify-between h-16 md:h-20">
         <Link
           href="/"
-          className={cn(
-            "flex items-center group",
-            transparent && "drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]",
-          )}
+          className="group inline-flex"
           aria-label={`${siteConfig.name} home`}
         >
-          <Logo
-            variant="mark"
-            className="h-10 w-auto sm:hidden transition-transform group-hover:scale-105"
-          />
-          <Logo
-            variant="full"
-            className="hidden sm:block h-9 md:h-10 w-auto transition-transform group-hover:scale-[1.02]"
-            priority
-          />
+          <span
+            className={cn(
+              "inline-flex items-center justify-center bg-white rounded-xl shadow-[var(--shadow-soft)] transition-all group-hover:shadow-[var(--shadow-strong)] group-hover:-translate-y-[1px]",
+              // Tighter padding on mobile mark, slightly more on desktop full logo
+              "p-1.5 sm:px-3 sm:py-2",
+              transparent && "ring-1 ring-white/20",
+            )}
+          >
+            <Logo variant="mark" className="h-8 w-auto sm:hidden" />
+            <Logo variant="full" className="hidden sm:block h-7 md:h-8 w-auto" priority />
+          </span>
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:flex items-center gap-1">
