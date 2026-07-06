@@ -33,7 +33,10 @@ const heroSlides: HeroSlide[] = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-24 pb-24 md:pt-32 md:pb-32 lg:pt-40 lg:pb-40 min-h-[640px] md:min-h-[720px] flex items-center">
+    // Negative margin pulls the hero up UNDER the sticky header, so the
+    // photo background extends behind the transparent nav bar at the top
+    // of the home page. Extra top padding restores comfortable content spacing.
+    <section className="relative overflow-hidden -mt-16 md:-mt-20 pt-40 pb-24 md:pt-52 md:pb-32 lg:pt-56 lg:pb-40 min-h-[720px] md:min-h-[820px] flex items-center">
       <HeroBackgroundCycle slides={heroSlides} />
 
       <div className="container-page w-full">
