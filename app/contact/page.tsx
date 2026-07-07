@@ -50,7 +50,6 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Let's start a conversation."
-        description="Whatever you're reaching out about — membership, mentorship, sponsorship, or a quick question — there's a place for it below."
       />
 
       <Section className="!pt-4">

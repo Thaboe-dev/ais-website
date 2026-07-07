@@ -82,11 +82,10 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-page py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-charcoal-400">
+        <div className="container-page py-6 text-xs text-charcoal-400">
           <p>
             © {year} {siteConfig.name}. A student organisation at {siteConfig.affiliation}.
           </p>
-          <p>Built with intention. Designed in Kigali.</p>
         </div>
       </div>
     </footer>
