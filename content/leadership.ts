@@ -29,7 +29,7 @@ export const founder: Leader = {
   role: "Founder · Founding President",
   program: "Founder, Ignite Research Academy",
   bio: "Muhammad founded the Africa Innovators Society at CMU-Africa to unleash the entrepreneurial potential of the continent's future leaders. He is also the Founder of Ignite Research Academy and a passionate advocate for GenAI and entrepreneurship across Africa.",
-  photo: "",
+  photo: "/images/leadership/muhammad-aliyu.png",
   linkedin: "",
 };
 
@@ -38,7 +38,7 @@ export const facultyAdvisor: Leader = {
   role: "Faculty Advisor",
   program: "Assistant Teaching Professor, CMU-Africa",
   bio: "Assistant Teaching Professor at Carnegie Mellon University Africa and the Africa Innovators Society's faculty advisor since the founding year. His support and mentorship have anchored AIS through every chapter — from the November 2023 launch through the Tartans Innovate hackathons and the AIS Leadership Summit.",
-  photo: "",
+  photo: "/images/leadership/jesse-thornburg.png",
   linkedin: "",
 };
 
@@ -182,7 +182,7 @@ export const leadershipYears: LeadershipYear[] = [
         role: "Founding President",
         program: "Founder, Ignite Research Academy",
         bio: "Muhammad founded AIS at CMU-Africa in November 2023 and led the founding executive team through the launch event, the AI Revolution Bootcamp, and the first FlutterFlow Rapid Prototyping Bootcamp.",
-        photo: "",
+        photo: "/images/leadership/muhammad-aliyu.png",
         order: 1,
       },
       {
