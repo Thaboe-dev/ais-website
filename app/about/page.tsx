@@ -20,7 +20,6 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About AIS"
         title="A society built by students, for the founders Africa needs."
-        description="We exist because the most promising entrepreneurs on the continent are already on campus — they just need the right room to walk into."
       />
 
       <Section className="!pt-4 md:!pt-8">
