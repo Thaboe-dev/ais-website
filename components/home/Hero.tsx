@@ -1,12 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/content/site.config";
+import { currentLeadershipYear } from "@/content/leadership";
 import { HeroBackgroundCycle, type HeroSlide } from "@/components/home/HeroBackgroundCycle";
+import { asset } from "@/lib/asset";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
+
+const heroLeaders = currentLeadershipYear.team.filter((l) => l.photo);
 
 const heroSlides: HeroSlide[] = [
   {
@@ -134,15 +139,23 @@ export function Hero() {
             className="mt-12 flex items-center gap-4 text-sm text-white/80"
           >
             <div className="flex -space-x-2">
-              {[0, 1, 2, 3].map((i) => (
+              {heroLeaders.map((leader, i) => (
                 <motion.div
-                  key={i}
-                  className="h-9 w-9 rounded-full ring-2 ring-charcoal-950 gradient-brand"
-                  style={{ filter: `hue-rotate(${i * 18}deg)` }}
+                  key={leader.name}
                   initial={{ opacity: 0, scale: 0.5, x: -8 }}
                   animate={{ opacity: 1, scale: 1, x: 0 }}
                   transition={{ duration: 0.5, ease: easeOut, delay: 1.1 + i * 0.08 }}
-                />
+                  className="relative h-9 w-9 shrink-0 rounded-full ring-2 ring-crimson-700 ring-offset-2 ring-offset-charcoal-950 overflow-hidden bg-charcoal-800"
+                  title={leader.name}
+                >
+                  <Image
+                    src={asset(leader.photo!)}
+                    alt={leader.name}
+                    width={36}
+                    height={36}
+                    className="h-full w-full object-cover"
+                  />
+                </motion.div>
               ))}
             </div>
             <span>

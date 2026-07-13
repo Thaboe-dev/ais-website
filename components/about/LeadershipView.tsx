@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Crown, GraduationCap, Linkedin, Mail, Users } from "lucide-react";
+import { Linkedin, Mail, Users } from "lucide-react";
 import { useState } from "react";
 import { Card, CardBody } from "@/components/ui/Card";
 import { Avatar } from "@/components/ui/Avatar";
@@ -70,11 +70,10 @@ function PermanentCard({
       >
         <div
           className={cn(
-            "px-6 py-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white",
+            "px-6 py-3 text-xs font-semibold uppercase tracking-wider text-white text-center",
             isFounder ? "gradient-brand" : "bg-amber-deep",
           )}
         >
-          {isFounder ? <Crown className="h-4 w-4" /> : <GraduationCap className="h-4 w-4" />}
           {isFounder ? "Founder" : "Faculty Advisor"}
         </div>
         <CardBody className="!p-7 md:!p-8">
@@ -185,9 +184,6 @@ export function LeadershipView({
               className="grid gap-3"
             >
               <p className="text-sm text-charcoal-500">{active.range}</p>
-              <p className="text-xs text-charcoal-400">
-                Tap any person to see their full bio.
-              </p>
             </motion.div>
           </AnimatePresence>
 

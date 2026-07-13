@@ -4,19 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/content/site.config";
+import { navItems } from "@/lib/nav";
 import { cn } from "@/lib/cn";
 import { MobileNav } from "./MobileNav";
 import { Logo } from "./Logo";
 
-export const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/programs", label: "Programs" },
-  { href: "/events", label: "Events" },
-  { href: "/community", label: "Community" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
-];
+export { navItems };
 
 export function Header() {
   const pathname = usePathname();

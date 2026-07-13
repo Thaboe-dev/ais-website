@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about/leadership",
     "/programs",
     "/events",
-    "/community",
+    ...(siteConfig.features.showCommunity ? (["/community"] as const) : []),
     "/contact",
     "/blog",
   ].map((path) => ({
@@ -31,12 +31,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const spotlightRoutes: MetadataRoute.Sitemap = getAllSpotlights().map((s) => ({
-    url: `${base}/community/spotlights/${s.slug}`,
-    lastModified: now,
-    changeFrequency: "yearly",
-    priority: 0.5,
-  }));
+  const spotlightRoutes: MetadataRoute.Sitemap = siteConfig.features.showCommunity
+    ? getAllSpotlights().map((s) => ({
+        url: `${base}/community/spotlights/${s.slug}`,
+        lastModified: now,
+        changeFrequency: "yearly" as const,
+        priority: 0.5,
+      }))
+    : [];
 
   const blogRoutes: MetadataRoute.Sitemap = getAllPosts().map((p) => ({
     url: `${base}/blog/${p.slug}`,

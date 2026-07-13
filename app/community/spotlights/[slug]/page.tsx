@@ -12,6 +12,10 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/content/site.config";
 
 export function generateStaticParams() {
+  if (!siteConfig.features.showCommunity) {
+    // Static export requires at least one param; page always 404s while hidden.
+    return [{ slug: "__hidden__" }];
+  }
   return getAllSpotlights().map((s) => ({ slug: s.slug }));
 }
 
@@ -28,6 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function SpotlightDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (!siteConfig.features.showCommunity || slug === "__hidden__") notFound();
   const spotlight = getSpotlightBySlug(slug);
   if (!spotlight) notFound();
 

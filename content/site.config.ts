@@ -85,6 +85,11 @@ export const siteConfig = {
     role: "MS IT '26 · AIS Member",
     photo: "",
   },
+
+  /** Toggle sections that are not ready for public launch. */
+  features: {
+    showCommunity: false,
+  },
 } as const;
 
 export type SiteConfig = typeof siteConfig;

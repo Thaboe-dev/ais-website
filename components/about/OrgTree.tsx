@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Crown, Star, Mail, Linkedin, BookOpen, X } from "lucide-react";
+import { Mail, Linkedin, X } from "lucide-react";
 import { useEffect } from "react";
 import { Avatar } from "@/components/ui/Avatar";
 import { cn } from "@/lib/cn";
@@ -20,7 +20,6 @@ const tierConfig: Record<
   {
     width: string;
     badgeBg: string;
-    icon: React.ComponentType<{ className?: string }>;
     avatarSize: number;
     titleClass: string;
   }
@@ -28,21 +27,18 @@ const tierConfig: Record<
   president: {
     width: "w-72 sm:w-80",
     badgeBg: "gradient-brand text-white",
-    icon: Crown,
     avatarSize: 72,
     titleClass: "text-lg",
   },
   vp: {
     width: "w-64 sm:w-72",
     badgeBg: "bg-amber-deep text-white",
-    icon: Star,
     avatarSize: 64,
     titleClass: "text-base",
   },
   lead: {
     width: "w-60 sm:w-64",
     badgeBg: "bg-charcoal-900 text-white",
-    icon: BookOpen,
     avatarSize: 56,
     titleClass: "text-base",
   },
@@ -71,7 +67,6 @@ function NodeCard({
   onClick: () => void;
 }) {
   const cfg = tierConfig[tier];
-  const Icon = cfg.icon;
   const badgeLabel =
     tier === "president" ? "President" : tier === "vp" ? "Vice President" : shortRole(leader.role);
   return (
@@ -89,12 +84,11 @@ function NodeCard({
     >
       <div
         className={cn(
-          "px-4 py-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider",
+          "px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-center",
           cfg.badgeBg,
         )}
       >
-        <Icon className="h-3.5 w-3.5 shrink-0" />
-        <span className="truncate">{badgeLabel}</span>
+        <span className="truncate block">{badgeLabel}</span>
       </div>
       <div className="p-4 sm:p-5 flex items-center gap-3">
         <Avatar name={leader.name} src={leader.photo} size={cfg.avatarSize} className="shrink-0" />

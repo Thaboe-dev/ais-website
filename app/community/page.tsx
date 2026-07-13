@@ -9,6 +9,7 @@ import { getAllSpotlights } from "@/lib/content";
 import { mentors, ventures } from "@/content/partners";
 import { siteConfig } from "@/content/site.config";
 import { buildMetadata } from "@/lib/seo";
+import { notFound } from "next/navigation";
 
 export const metadata = buildMetadata({
   title: "Community",
@@ -18,6 +19,8 @@ export const metadata = buildMetadata({
 });
 
 export default function CommunityPage() {
+  if (!siteConfig.features.showCommunity) notFound();
+
   const spotlights = getAllSpotlights();
 
   return (
