@@ -83,7 +83,7 @@ export const siteConfig = {
       "AIS at CMU-Africa has been a game-changer. It's where tech skills meet entrepreneurship — and where ideas turn into real solutions. We're not just students here; we're the future tech leaders of Africa.",
     name: "Sheila Wafula",
     role: "MS IT '26 · AIS Member",
-    photo: "",
+    photo: "/images/sheila-wafula.png",
   },
 
   /** Toggle sections that are not ready for public launch. */
