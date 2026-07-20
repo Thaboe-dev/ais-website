@@ -75,7 +75,6 @@ export const siteConfig = {
     general: "https://forms.gle/REPLACE_GENERAL_CONTACT",
     mentorship: "https://forms.gle/REPLACE_MENTORSHIP",
     sponsorship: "https://forms.gle/REPLACE_SPONSORSHIP",
-    newsletter: "https://forms.gle/REPLACE_NEWSLETTER",
   },
 
   testimonial: {
@@ -89,6 +88,7 @@ export const siteConfig = {
   /** Toggle sections that are not ready for public launch. */
   features: {
     showCommunity: false,
+    showPrograms: false,
   },
 } as const;
 

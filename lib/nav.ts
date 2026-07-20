@@ -11,6 +11,8 @@ const allNavItems = [
 ] as const;
 
 /** Primary navigation — omits routes hidden by feature flags. */
-export const navItems = allNavItems.filter(
-  (item) => item.href !== "/community" || siteConfig.features.showCommunity,
-);
+export const navItems = allNavItems.filter((item) => {
+  if (item.href === "/community" && !siteConfig.features.showCommunity) return false;
+  if (item.href === "/programs" && !siteConfig.features.showPrograms) return false;
+  return true;
+});

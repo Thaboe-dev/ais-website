@@ -29,7 +29,7 @@ export function ImpactStats() {
               The numbers behind AIS
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-white max-w-2xl">
-              A society built by students. Measured by what they ship.
+              A society built by students.
             </h2>
           </FadeUp>
           <Stagger className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-8" amount={0.3}>

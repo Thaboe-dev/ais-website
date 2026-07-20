@@ -137,15 +137,15 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
         <div className="rounded-2xl bg-[var(--color-cream)] p-8 md:p-10 text-center">
           <h2 className="text-2xl md:text-3xl font-bold">Want first access to events like this?</h2>
           <p className="mt-3 text-charcoal-600 max-w-2xl mx-auto">
-            Join the AIS community or our newsletter to hear about pitch nights, workshops, and
-            founder dinners before they fill up.
+            Join the AIS community to hear about pitch nights, workshops, and founder dinners before
+            they fill up.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Button href={siteConfig.forms.membership} size="md">
               Join AIS
             </Button>
-            <Button href={siteConfig.forms.newsletter} size="md" variant="outline">
-              Subscribe to newsletter
+            <Button href="/events" size="md" variant="outline">
+              Browse events
             </Button>
           </div>
         </div>

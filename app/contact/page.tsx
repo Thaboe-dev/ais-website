@@ -35,13 +35,6 @@ const contactRoutes: ContactRoute[] = [
     cta: "Start the conversation",
     url: siteConfig.forms.sponsorship,
   },
-  {
-    key: "news",
-    title: "Newsletter",
-    description: "Get monthly updates on programs, events, and member wins delivered to your inbox.",
-    cta: "Subscribe",
-    url: siteConfig.forms.newsletter,
-  },
 ];
 
 export default function ContactPage() {

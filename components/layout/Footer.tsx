@@ -48,7 +48,9 @@ export function Footer() {
           <h3 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">Explore</h3>
           <ul className="space-y-2.5 text-sm">
             <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
-            <li><Link href="/programs" className="hover:text-white transition-colors">Programs</Link></li>
+            {siteConfig.features.showPrograms && (
+              <li><Link href="/programs" className="hover:text-white transition-colors">Programs</Link></li>
+            )}
             <li><Link href="/events" className="hover:text-white transition-colors">Events</Link></li>
             {siteConfig.features.showCommunity && (
               <li><Link href="/community" className="hover:text-white transition-colors">Community</Link></li>
@@ -63,7 +65,6 @@ export function Footer() {
             <li><a href={siteConfig.forms.membership} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Join AIS</a></li>
             <li><a href={siteConfig.forms.mentorship} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Become a Mentor</a></li>
             <li><a href={siteConfig.forms.sponsorship} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Sponsor AIS</a></li>
-            <li><a href={siteConfig.forms.newsletter} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Newsletter</a></li>
             <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
           </ul>
         </div>

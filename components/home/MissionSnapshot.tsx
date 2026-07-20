@@ -11,12 +11,12 @@ const pillars = [
   {
     icon: Compass,
     title: "Direction",
-    body: "Workshops, mentors, and frameworks that turn vague ideas into shippable ventures.",
+    body: "Workshops, mentors, and practical frameworks that help members develop and launch their ventures.",
   },
   {
     icon: Rocket,
     title: "Momentum",
-    body: "Weekly programming and pitch nights that keep every member moving forward.",
+    body: "Planned programming and pitch events that keep every member moving forward.",
   },
   {
     icon: Users,

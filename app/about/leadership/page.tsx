@@ -19,11 +19,7 @@ export const metadata = buildMetadata({
 export default function LeadershipPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Leadership"
-        title="The people behind AIS."
-        description="From the founding team in 2023 to today's elected board — every executive who has helped build the Africa Innovators Society."
-      />
+      <PageHero eyebrow="About" title="Leadership" />
 
       <Section className="!pt-4">
         <LeadershipView

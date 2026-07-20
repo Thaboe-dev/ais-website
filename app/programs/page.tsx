@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/Button";
 import { ProgramCard } from "@/components/programs/ProgramCard";
 import { YearRhythm } from "@/components/programs/YearRhythm";
 import { programs } from "@/content/programs";
+import { siteConfig } from "@/content/site.config";
 import { ArrowUpRight } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
+import { notFound } from "next/navigation";
 
 export const metadata = buildMetadata({
   title: "Programs",
@@ -15,6 +17,8 @@ export const metadata = buildMetadata({
 });
 
 export default function ProgramsPage() {
+  if (!siteConfig.features.showPrograms) notFound();
+
   return (
     <>
       <PageHero

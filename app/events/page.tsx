@@ -26,7 +26,6 @@ export default function EventsPage() {
       <PageHero
         eyebrow="Events"
         title="Where the AIS community shows up."
-        description="Pitch nights. Founder dinners. Workshops. Hackathons. Whatever the format, it's where the work — and the community — comes alive."
       />
       <Section className="!pt-4">
         <EventsView upcoming={upcoming} past={past} />

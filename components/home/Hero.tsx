@@ -120,12 +120,12 @@ export function Hero() {
             </motion.div>
             <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}>
               <Button
-                href="/programs"
+                href="/events"
                 variant="outline"
                 size="lg"
                 className="!bg-white/10 !text-white !border-white/30 hover:!bg-white hover:!text-charcoal-900 hover:!border-white backdrop-blur-md"
               >
-                Explore programs
+                Explore events
               </Button>
             </motion.div>
           </motion.div>

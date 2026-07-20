@@ -59,20 +59,56 @@ export function Header() {
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:flex items-center gap-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                transparent
-                  ? "text-white/90 hover:text-white hover:bg-white/10"
-                  : "text-charcoal-700 hover:text-crimson-700 hover:bg-crimson-50",
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isEvents = item.href === "/events";
+            const isActive =
+              item.href === "/"
+                ? pathname === "/"
+                : pathname === item.href || pathname.startsWith(`${item.href}/`);
+
+            if (isEvents) {
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "relative ml-1 inline-flex items-center overflow-hidden rounded-full px-3.5 py-1.5 text-sm font-semibold transition-all",
+                    "shadow-[var(--shadow-soft)] hover:-translate-y-px hover:shadow-[var(--shadow-strong)]",
+                    transparent
+                      ? "bg-white text-charcoal-900 hover:bg-amber-soft"
+                      : "bg-crimson-700 text-white hover:bg-crimson-800",
+                    isActive && transparent && "bg-amber-soft",
+                  )}
+                >
+                  <span
+                    aria-hidden
+                    className={cn(
+                      "pointer-events-none absolute inset-0 rounded-full",
+                      "animate-[events-glow_2.4s_ease-in-out_infinite]",
+                      transparent ? "ring-2 ring-white/70" : "ring-2 ring-crimson-400/70",
+                    )}
+                  />
+                  <span className="relative">{item.label}</span>
+                </Link>
+              );
+            }
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                  transparent
+                    ? "text-white/90 hover:text-white hover:bg-white/10"
+                    : "text-charcoal-700 hover:text-crimson-700 hover:bg-crimson-50",
+                  isActive && !transparent && "text-crimson-700 bg-crimson-50",
+                )}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-2">

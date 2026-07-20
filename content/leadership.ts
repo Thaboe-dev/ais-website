@@ -92,7 +92,7 @@ export const leadershipYears: LeadershipYear[] = [
         name: "Wanchi Lucia Yen",
         role: "Minister of Communication",
         program: "MSIT '26 · CMU-Africa",
-        bio: "Lucia leads AIS's external voice — across the website, newsletter, social channels, and the storytelling that turns members' wins into community momentum.",
+        bio: "Lucia leads AIS's external voice — across the website, social channels, and the storytelling that turns members' wins into community momentum.",
         photo: "/images/leadership/wanchi-lucia-yen.png",
         linkedin: "",
         order: 4,

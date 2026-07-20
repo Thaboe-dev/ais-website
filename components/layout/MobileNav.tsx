@@ -64,16 +64,24 @@ export function MobileNav({
           className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-[var(--color-cream)] border-t border-charcoal-100 overflow-y-auto"
         >
           <nav aria-label="Mobile" className="container-page py-8 flex flex-col gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="px-4 py-4 rounded-lg text-lg font-semibold text-charcoal-800 hover:bg-crimson-50 hover:text-crimson-700 transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isEvents = item.href === "/events";
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    "px-4 py-4 rounded-lg text-lg font-semibold transition-colors",
+                    isEvents
+                      ? "bg-crimson-700 text-white hover:bg-crimson-800 shadow-[var(--shadow-soft)]"
+                      : "text-charcoal-800 hover:bg-crimson-50 hover:text-crimson-700",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             <Link
               href={siteConfig.forms.membership}
               target="_blank"

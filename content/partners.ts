@@ -31,8 +31,8 @@ export const partners: Partner[] = [
     logo: "/logos/africas-business-heroes.png",
     url: "https://africabusinessheroes.org",
     width: 1024,
-    height: 608,
-    tileBg: "bg-black",
+    height: 406,
+    tileBg: "bg-white",
     tier: "gold",
   },
   {

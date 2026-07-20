@@ -79,11 +79,10 @@ forms: {
   general: "https://forms.gle/...",
   mentorship: "https://forms.gle/...",
   sponsorship: "https://forms.gle/...",
-  newsletter: "https://forms.gle/...",
 },
 ```
 
-Paste in your real Google Form URLs. That's it — every "Join AIS", "Apply", "Sponsor", and "Subscribe" button across the site updates automatically.
+Paste in your real Google Form URLs. That's it — every "Join AIS", "Apply", and "Sponsor" button across the site updates automatically.
 
 ### To add or update leadership
 
