@@ -136,13 +136,15 @@
     box-shadow: 0 0 0 1px rgba(196, 18, 48, 0.18);
   }
 
-  @keyframes events-glow {
-    0%, 100% { opacity: 0.35; transform: scale(1); }
-    50% { opacity: 0.9; transform: scale(1.04); }
+  @keyframes events-bounce {
+    0%, 55%, 100% { transform: translateY(0); }
+    65% { transform: translateY(-5px); }
+    75% { transform: translateY(0); }
+    85% { transform: translateY(-2.5px); }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .animate-\[events-glow_2\.4s_ease-in-out_infinite\] {
+    .animate-\[events-bounce_2\.2s_ease-in-out_infinite\] {
       animation: none !important;
     }
   }
